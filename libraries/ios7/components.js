@@ -3637,6 +3637,8 @@ prx.types.ios7_actionsheet = {
 	,onDisplay: function(item,containerid,pageid,symbol) {
 		var _id = (!containerid) ? item.id : containerid+'-'+item.id;
 		
+		if( item.detachlast && item.buttons.length == 1) item.detachlast = false;
+		
 		var cR = '';
 		cR += '<div id="'+_id+'" class="box pos type-ios7-actionsheet">';
 		
@@ -4266,6 +4268,7 @@ prx.types.ios8_map_tag = {
 		if(item.imgSrc2.url != '') {
 			cR += '<div class="ios8-map-tag-icon-right actions-actions1"></div>';
 		}
+		cR += '</div>';
 		cR += '</div>';
 		return cR;
 	}
